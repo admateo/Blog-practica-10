@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>David Mateo Cuenca</title>
+		<script type="text/javascript">	
+			window.onload = function(){			
+				var contexto = cargaContextoCanvas('canvas');
+				if(canvas && canvas.getContext){
+					//Accedo al contexto de '2d' de este canvas, necesario para dibujar
+					if(contexto){
+						//Cara
+						contexto.beginPath();
+						contexto.arc(140,45,30,Math.PI*2,false);
+						contexto.closePath();
+						contexto.stroke();
+						//Ojo izquierdo
+						contexto.beginPath();
+						contexto.arc(125,35,4,0,Math.PI*2,false);
+						contexto.stroke();
+						//Ojo derecho
+						contexto.beginPath();
+						contexto.arc(155,35,4,0,Math.PI*2,false);
+						contexto.stroke();
+						//Boca
+						contexto.beginPath();
+						contexto.arc(139,55,8,0,Math.PI*2,false);
+						contexto.closePath();
+						contexto.stroke();
+						//Cuerpo
+						contexto.beginPath();
+						contexto.moveTo(139,75);
+						contexto.lineTo(139, 140);
+						contexto.stroke();
+						//Brazo izquierdo
+						contexto.beginPath();
+						contexto.moveTo(139,94);
+						contexto.lineTo(119, 124);
+						contexto.stroke();
+						//Brazo derecho
+						contexto.beginPath();
+						contexto.moveTo(160,124);
+						contexto.lineTo(140, 94);
+						contexto.stroke();
+						//Pierna derecho
+						contexto.beginPath();
+						contexto.moveTo(111,180);
+						contexto.lineTo(139, 140);
+						contexto.stroke();
+						//Pierna izquierda
+						contexto.beginPath();
+						contexto.moveTo(170, 180);
+						contexto.lineTo(140, 140);
+						contexto.stroke();
+					}
+				}
+			}
+			//Recibe un identificador del elemento canvas y carga el canvas
+			//Devueve el contexto del canvas o FALSE si no ha podido conseguise
+			function cargaContextoCanvas(idCanvas){
+				let elemento = document.getElementById(idCanvas);
+				if(elemento && elemento.getContext){
+					let contexto = elemento.getContext('2d');
+					if(contexto){
+						return contexto;
+					}
+				}
+				return FALSE;
+			}
+		</script>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Roboto');
+		</style>
+	</head>
+	<body>
+		<header><h1>David Mateo Cuenca</h1></header>
+		<nav>
+			<ul>
+				<li><a href="#">Noticias</a></li>
+				<li><a href="#">Analisis</a></li>
+				<li><a href="#">Tutoriales</a></li>
+				<li><a href="#">Sobre mi</a></li>
+			</ul>
+		</nav>
+		<div id="container">
+			<main>
+				<section>
+					<div id="titulo"><a href="#">Noticias >></a></div>
+					<div id="articulos">
+						<article>
+							<img src="img/elon_musk.jpg" alt="elon_musk">
+							<h3>Elon Musk niega ser Satoshi, el creador del Bitcoin</h3>
+							<p>Elon Musk ha salido al paso del rumor que dice que es él el misterioso creador del Bitcoin, Satoshi. Dice que ni siquiera sabe dónde están sus Bitcoins.</p>
+						</article>
+						<article>
+							<img src="img/youtube_bateria.jpg" alt="youtube_bateria">						
+							<h3>YouTube soluciona los problemas de batería en la app de iOS</h3>				
+							<p>YouTube ha lanzado una actualización de su aplicación para iOS 11 que asegura haber corregido el problema de excesivo consumo de batería que se había observado.</p>
+						</article>
+						<article>
+							<img src="img/modo_oscuro_iphone.jpg" alt="modo_oscuro_iphone">						
+							<h3>Cómo activar el modo oscuro en iPhone con iOS 11</h3>				
+							<p>A lo mejor no lo sabías, pero con iOS 11 Apple introdujo una característica que permite activar el modo oscuro en iPhone. Descubre cómo habilitarlo.</p>
+						</article>
+					</div>
+				</section>
+				<section>
+					<div id="titulo"><a href="#">Analisis >></a></div>
+					<div id="articulos">
+						<article>
+							<img src="img/moto_g5s_plus.jpg" alt="moto_g5s_plus">					
+							<h3>Motorola Moto G5S Plus</h3>						
+							<p>¿Buscas el mejor móvil de gama media? No te pierdas nuestro análisis del Moto G5S Plus, equipado con doble cámara y notable por su relación calidad precio.</p>
+						</article>
+						<article>
+							<img src="img/iphone_8_plus.jpg" alt="iphone_8_plus">
+							<h3>Apple iPhone 8 Plus</h3>					
+							<p>He probado a fondo el iPhone 8 Plus, y en este análisis te cuento mi opinion sobre el nuevo móvil de Apple. ¿Merece la pena comprarlo?</p>
+						</article>
+						<article>
+							<img src="img/nokia_8.jpg" alt="nokia_8">
+							<h3>Nokia 8</h3>					
+							<p>Turno para el análisis del Nokia 8, el nuevo buque insignia de la compañía. Examinamos si está al nivel de otros gama alta y cómo de buena es su cámara.</p>
+						</article>
+					</div>
+				</section>
+				<section>
+					<div id="titulo"><a href="#">Tutoriales >></a></div>
+					<div id="articulos">
+						<article>
+							<img src="img/compartir_acceso_netflix.jpg" alt="compartir_acceso_netflix">						
+							<h3>Cómo compartir una cuenta de Netflix sin dar la contraseña</h3>					
+							<p>Te mostramos cómo compartir el acceso a servicios como Netflix, HBO o Amazon Prime Video sin comprometer la seguridad de tu usuario y contraseña de acceso.</p>
+						</article>
+						<article>
+							<img src="img/drive_linux.jpg" alt="drive_linux">
+							<h3>Cómo utilizar Google Drive de escritorio en Linux</h3>					
+							<p>Hoy te explicamos cómo sincronizar Google Drive con Linux gracias a Insync, uno de los mejores clientes no oficiales de este servicio que existen ahora mismo.</p>
+						</article>
+						<article>
+							<img src="img/linux_macos.jpg" alt="linux_macos">
+							<h3>Cómo configurar Linux para que tenga la interfaz de macOS</h3>					
+							<p>Linux es un sistema operativo muy personalizable. Tanto que lo puedes configurar para que su interfaz se parezca a la de macOS, el sistema operativo de Apple.</p>
+						</article>
+					</div>
+				</section>
+			</main>
+			<aside>
+				<div id="titulo"><a href="#">Sobre mi >></a></div>
+					<article>
+						<img src="img/yo.jpeg" alt="yo">						
+						<h3>David Mateo Cuenca</h3>					
+						<p>Técnico Superior de Desarrollo de Aplicaciones Multiplataforma y Desarrollo Web.</p>
+					</article>					
+				<div id="tituloform"><a href="#">Contacta conmigo</a></div>
+					<article>					
+						<form method="post" action="">
+							<p><input type="text" name="nombre" placeholder="Pepito Grillo" maxlength="50" required></p>
+							<p><input type="text" name="email" placeholder="pepito@gmail.com" maxlength="50" required></p>
+							<p><textarea name="texto" rows="10" cols="40" placeholder="Escribe algo..." maxlength="500" required></textarea></p>
+							<input type="submit" name="enviar" id="enviar">
+						</form>
+					</article>
+					<div id="rotacion">
+						<svg width="85" height="85" version="1.1">
+  							<rect x="10" y="10" width="70" height="70" stroke="black" fill="transparent" stroke-width="4"/>
+  						</svg>	
+					</div>
+					
+					<canvas id="canvas" width="180" height="160">
+						No soporta la API de HTML5 de Canvas
+					</canvas>
+				
+			</aside>
+		</div>
+		<footer>
+			<ul>
+				<li><a href="#">Contacto</a></li>
+				<li><a href="#">Avisos Legales</a></li>
+				<li><a href="#">Publicidad</a></li>
+			</ul>
+			<div>
+				<a href="https://facebook.com/"><img src="img/redsocialf.png" alt="Facebook"></a>
+				<a href="https://github.com/"><img src="img/github.png" alt="GitHub"></a>
+				<a href="https://twitter.com/"><img src="img/redsocialt.png" alt="Twitter"></a>
+			</div>	
+		</footer>
+	</div>
+	</body>
+</html>
